@@ -11,7 +11,9 @@
         "files": [ "command.php" ]
     },
     "require": {
-        "wp-cli/wp-cli": "^1.1.0"
+        "wp-cli/wp-cli": "^2",
+        "wp-cli/find-command": "*",
+        "danielbachhuber/host-check-command": "*"
     },
     "require-dev": {
         "behat/behat": "~2.5"
