@@ -13,10 +13,10 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 wp dh-find-check <path> [--fields=<fields>] [--field=<field>] [--format=<format>]
 ~~~
 
-First, runs `wp find` to find all potential WordPress installations under
-a given path, and builds a list of all potential paths. Next, runs
-`wp host-check` to determine whether the installation is still hosted on
-the server.
+First, runs `wp find` ([doc](https://github.com/wp-cli/find-command#wp-clifind-command))
+to find all potential WordPress installations under a given path, and builds
+a list of all potential paths. Next, runs `wp host-check` ([doc](https://github.com/danielbachhuber/host-check-command/#danielbachhuberhost-check-command))
+to determine whether the installation is still hosted on the server.
 
 Installation list is only output at the end of execution. Data for each
 installation includes:
