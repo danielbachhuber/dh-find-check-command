@@ -9,11 +9,64 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 ## Using
 
+~~~
+wp dh-find-check <path> [--fields=<fields>] [--field=<field>] [--format=<format>]
+~~~
 
+First, runs `wp find` to find all potential WordPress installations under
+a given path, and builds a list of all potential paths. Next, runs
+`wp host-check` to determine whether the installation is still hosted on
+the server.
+
+Installation list is only output at the end of execution. Data for each
+installation includes:
+
+* wp_path - Path to the WordPress installation.
+* version - WordPress version.
+* db_host - Host name for the database.
+* db_user - User name for the database.
+* db_name - Database name for the database.
+* status - Hosting status (documented next).
+
+Potential statuses include:
+
+* `check-failed` - Something about the host check process failed.
+* `no-wp-exists` - WordPress doesn't exist at the path.
+* `no-wp-config` - No wp-config.php file was found for the installation.
+* `error-db-connect` - Couldn't connect to the database using defined credentials.
+* `error-db-select` - Connected to the database but couldn't select specific database.
+* `missing-<http-code>` - WordPress installation isn't on the server.
+* `hosted-maintenance` - WordPress installation is hosted but renders maintenance page.
+* `hosted-php-fatal` - WordPress installation is hosted but has a PHP fatal.
+* `hosted-broken-wp-login` - WordPress installation is hosted but the login page is broken.
+* `hosted-valid-login` - WordPress installation is hosted on server and login page loads.
+
+**OPTIONS**
+
+	<path>
+		Path to search the subdirectories of.
+
+	[--fields=<fields>]
+		Limit the output to specific row fields.
+
+	[--field=<field>]
+		Output a specific field for each row.
+
+	[--format=<format>]
+		Render output in a specific format.
+		---
+		default: table
+		options:
+		  - table
+		  - json
+		  - csv
+		  - yaml
+		  - count
+		---
 
 ## Installing
 
-Installing this package requires WP-CLI v1.1.0 or greater. Update to the latest stable release with `wp cli update`.
+Installing this package requires WP-CLI v2 or greater. Update to the latest stable release with `wp cli update`.
 
 Once you've done so, you can install this package with:
 
