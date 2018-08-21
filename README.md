@@ -21,12 +21,12 @@ the server.
 Installation list is only output at the end of execution. Data for each
 installation includes:
 
-* wp_path - Path to the WordPress installation.
-* version - WordPress version.
-* db_host - Host name for the database.
-* db_user - User name for the database.
-* db_name - Database name for the database.
-* status - Hosting status (documented next).
+* `wp_path` - Path to the WordPress installation.
+* `version` - WordPress version.
+* `db_host` - Host name for the database.
+* `db_user` - User name for the database.
+* `db_name` - Database name for the database.
+* `status` - Hosting status (documented next).
 
 Potential statuses include:
 
